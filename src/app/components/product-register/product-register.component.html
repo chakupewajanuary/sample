@@ -1,0 +1,108 @@
+<!-- product-register.component.html -->
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h5>Add New Product</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="addProduct()">
+        <!-- Product ID -->
+        <!-- <div class="form-group mb-3">
+          <label for="productId" class="form-label">Product ID</label>
+          <input id="productId" type="number" class="form-control" [(ngModel)]="productnew.ProductId" name="productId" />
+        </div> -->
+
+        <!-- Product SKU -->
+        <div class="form-group mb-3">
+          <label for="productSku" class="form-label">Product SKU</label>
+          <input id="productSku" type="text" class="form-control" [(ngModel)]="productnew.ProductSku" name="productSku" />
+        </div>
+
+        <!-- Product Name -->
+        <div class="form-group mb-3">
+          <label for="productName" class="form-label">Product Name</label>
+          <input id="productName" type="text" class="form-control" [(ngModel)]="productnew.ProductName" name="productName" />
+        </div>
+
+        <!-- Product Price -->
+        <!-- <div class="form-group mb-3">
+          <label for="productPrice" class="form-label">Product Price</label>
+          <input id="productPrice" type="number" class="form-control" [(ngModel)]="productnew.ProductPrice" name="productPrice" />
+        </div> -->
+
+        <!-- Product Short Name -->
+        <!-- <div class="form-group mb-3">
+          <label for="productShortName" class="form-label">Product Short Name</label>
+          <input id="productShortName" type="text" class="form-control" [(ngModel)]="productnew.ProductShortName" name="productShortName" />
+        </div> -->
+
+        <!-- Product Description -->
+        <!-- <div class="form-group mb-3">
+          <label for="productDescription" class="form-label">Product Description</label>
+          <textarea id="productDescription" class="form-control" [(ngModel)]="productnew.ProductDescription" name="productDescription"></textarea>
+        </div> -->
+
+        <!-- Created Date -->
+        <!-- <div class="form-group mb-3">
+          <label for="createdDate" class="form-label">Created Date</label>
+          <input id="createdDate" type="date" class="form-control" [(ngModel)]="productnew.CreatedDate" name="createdDate" />
+        </div> -->
+
+        <!-- Delivery Time Span -->
+        <!-- <div class="form-group mb-3">
+          <label for="deliveryTimeSpan" class="form-label">Delivery Time Span</label>
+          <input id="deliveryTimeSpan" type="text" class="form-control" [(ngModel)]="productnew.DeliveryTimeSpan" name="deliveryTimeSpan" />
+        </div> -->
+
+        <!-- Category ID -->
+        <!-- <div class="form-group mb-3">
+          <label for="categoryId" class="form-label">Category ID</label>
+          <input id="categoryId" type="number" class="form-control" [(ngModel)]="productnew.CategoryId" name="categoryId" />
+        </div> -->
+
+        <!-- Product Image URL -->
+        <!-- <div class="form-group mb-3">
+          <label for="productImageUrl" class="form-label">Product Image URL</label>
+          <input id="productImageUrl" type="text" class="form-control" [(ngModel)]="productnew.ProductImageUrl" name="productImageUrl" />
+        </div> -->
+
+        <!-- Category Name -->
+        <!-- <div class="form-group mb-3">
+          <label for="categoryName" class="form-label">Category Name</label>
+          <input id="categoryName" type="text" class="form-control" [(ngModel)]="productnew.categoryName" name="categoryName" />
+        </div> -->
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- for the categories test  -->
+<div class="card">
+  <div class="card-header">
+    <h4>Add New Category</h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="addCategory()">
+      <div class="form-group">
+        <label for="categoryId">Category ID</label>
+        <input type="number" class="form-control" id="categoryId" [(ngModel)]="categoryNew.CategoryId" name="categoryId" required>
+      </div>
+      <div class="form-group">
+        <label for="categoryName">Category Name</label>
+        <input type="text" class="form-control" id="categoryName" [(ngModel)]="categoryNew.CategoryName" name="categoryName" required>
+      </div>
+      <div class="form-group">
+        <label for="parentCategoryId">Parent Category ID</label>
+        <input type="number" class="form-control" id="parentCategoryId" [(ngModel)]="categoryNew.ParentCategoryId" name="parentCategoryId" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Category</button>
+    </form>
+  </div>
+</div>
+
+
+

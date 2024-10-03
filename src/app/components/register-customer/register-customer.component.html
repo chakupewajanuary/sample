@@ -1,7 +1,7 @@
 <p>register-customer works!</p>
-<div class="container">
+<div class="container" style="margin: 0px 100px 20px;">
   <div>
-    <h2>Register Customer</h2>
+    <h2 style="text-align: center;">Register Customer</h2>
     <form (ngSubmit)="onRegister()">
       <div>
         <label for="name">Name</label>
@@ -16,8 +16,11 @@
         <input type="password" [(ngModel)]="customer.Password" name="password" required />
       </div>
       <div class="row">
-        <div class="col-6"> <button type="submit" class="btn btn-primary"(click)="onRegister()">Register</button></div>
-        <div class="col-6"><button class="btn btn-primary" (click)="login()">Login</button></div>
+        <div class="col-6"> 
+          <button type="submit" class="btn btn-primary"(click)="onRegister()">Register</button></div>
+        <div class="col-6 text-end">
+          <button class="btn btn-secondary" (click)="login()">Login</button>
+        </div>
       </div>
     </form>
   </div>

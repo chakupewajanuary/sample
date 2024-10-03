@@ -1,1 +1,49 @@
-<p>dashboard works!</p>
+<h1 style="text-transform: uppercase; text-align: center;">Product List on Market Brand</h1>
+
+<h1 style="text-align:center;">Amazon Products</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of product; let i = index">
+      <div class="card mb-4">
+        <div style="font-weight: bold; color: green; text-transform: uppercase">
+          {{ product.productName }}
+          <img 
+          [src]="product.productImageUrl" 
+          class="card-img-top" 
+          [ngClass]="{'resized-image': enlargedImageIndex !== i, 'enlarged-image': enlargedImageIndex === i}" 
+          alt="{{ product.productName }}" 
+          (click)="toggleImageSize(i)"
+        />
+        </div>
+
+     
+        <div class="card-body">
+          <p class="card-text">{{ product.productDescription }}</p>
+          <p class="card-text">
+            <strong>Price: ${{ product.productPrice }}</strong>
+          </p>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-4 text-center">
+            <label>Order</label>
+            <button class="btn btn-primary mt-2" (click)="openModal()">
+              <i class="fas fa-shopping-cart"></i> Buy
+            </button>
+          </div>
+          <div class="col-4 text-center">
+            <label>Update</label>
+            <button class="btn btn-secondary mt-2">
+              <i class="fas fa-sync-alt"></i> Update
+            </button>
+          </div>
+          <div class="col-4 text-center">
+            <label>Cancel</label>
+            <button class="btn btn-danger mt-2">
+              <i class="fas fa-times"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

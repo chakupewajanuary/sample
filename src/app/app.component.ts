@@ -3,6 +3,7 @@ import { Comment } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { MenubarComponent } from './components/menubar/menubar.component';
 
 
 @Component({
@@ -14,4 +15,5 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'sample';
+
 }
