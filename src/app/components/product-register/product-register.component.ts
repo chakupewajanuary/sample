@@ -71,6 +71,11 @@ categoryNew: any = {
 
 // for add categories
 addCategory() {
+    // Check if ProductShortName is empty, if so, set it to ProductName
+    if (this.productnew.ProductShortName === '') {
+      this.productnew.ProductShortName = this.productnew.ProductName;
+    }
+  
   this.registerproduct.addNewCategory(this.categoryNew).subscribe({
     next:(res:any)=>{
       if(res.result){
