@@ -28,17 +28,17 @@ product: prodctRegister[] = []; // This is the array where new products will be 
   constructor(private registerproduct:AdvertiseService,private route:Router){
       // Initialize FormGroup with all required fields
       this.productForm = new FormGroup({
-        // ProductId: new FormControl(0, [Validators.required]),
+        // ProductId: new FormControl([null], [Validators.required]),
         ProductSku: new FormControl('', [Validators.required]),
         ProductName: new FormControl('', [Validators.required]),
-        // ProductPrice: new FormControl(0, [Validators.required]),
+        ProductPrice: new FormControl(0, [Validators.required]),
         ProductShortName: new FormControl('', [Validators.required]),
         ProductDescription: new FormControl('', [Validators.required]),
-        // CreatedDate: new FormControl(new Date().toISOString(), [Validators.required]),
-        // DeliveryTimeSpan: new FormControl('', [Validators.required]),
-        // CategoryId: new FormControl(0, [Validators.required]),
-        // ProductImageUrl: new FormControl('', [Validators.required]),
-        // categoryName: new FormControl('') // Optional field
+         CreatedDate: new FormControl(new Date().toISOString(), [Validators.required]),
+        DeliveryTimeSpan: new FormControl('', [Validators.required]),
+        CategoryId: new FormControl(0, [Validators.required]),
+        ProductImageUrl: new FormControl('', [Validators.required]),
+        categoryName: new FormControl('', [Validators.required]) // Optional field
       });
   }
   //livecycle method
@@ -49,13 +49,14 @@ product: prodctRegister[] = []; // This is the array where new products will be 
 
 //for class in terface imported and initalize
 productnew :any={
-  "ProductId": 0,
+  // "ProductId": 0,
   "ProductSku": "",
   "ProductName": "",
   "ProductPrice": 0,
   "ProductShortName": "",
   "ProductDescription": "",
-  "CreatedDate":  ""   ,  //DatePipe,// new Date().toISOString(),
+  "CreatedDate": new Date().toISOString(),
+  // "CreatedDate":  ""   ,  //DatePipe,// new Date().toISOString(),
   "DeliveryTimeSpan": "",
   "CategoryId": 0,
   "ProductImageUrl": "",
@@ -85,7 +86,10 @@ addCategory() {
 
 // for add product
 addProduct(){
-  // Update productnew object with form values
+    // Assign the next ProductId
+    this.productnew.ProductId = this.registerproduct.getNextProductId();
+
+  // // Update productnew object with form values
   // this.productnew = this.productForm.value;
 
      // Check if ProductShortName is empty, if so, set it to ProductName
@@ -105,7 +109,7 @@ addProduct(){
    
   })
 }
-
+ddProduct(){}
 
 
 

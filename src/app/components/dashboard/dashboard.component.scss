@@ -5,3 +5,14 @@
   .enlarged-image {
     width: 300px; /* or whatever enlarged size you want */
   }
+  // * {
+  //   box-sizing: border-box;
+  // }
+  .product-description {
+    display: -webkit-box;              /* Creates a flexible layout */
+    -webkit-line-clamp: 2;             /* Limits to 2 lines */
+    -webkit-box-orient: vertical;      /* Orients the text vertically */
+    overflow: hidden;                  /* Hides any overflow text */
+    text-overflow: ellipsis;           /* Adds '...' at the end */
+    max-width: 100%;                   /* Adjust the width based on your design */
+  }

@@ -5,12 +5,99 @@
       <h5>Add New Product</h5>
     </div>
     <div class="card-body">
+      <form [formGroup]="productForm" (ngSubmit)="ddProduct()">
+        <!-- Product SKU -->
+        <div class="form-group mb-3">
+          <label for="productSku" class="form-label">Product SKU</label>
+          <input id="productSku" type="text" class="form-control" formControlName="ProductSku" />
+          <div *ngIf="productForm.get('ProductSku')?.invalid && productForm.get('ProductSku')?.touched">
+            SKU is required
+          </div>
+        </div>
+
+        <!-- Product Name -->
+        <div class="form-group mb-3">
+          <label for="productName" class="form-label">Product Name</label>
+          <input id="productName" type="text" class="form-control" formControlName="ProductName" />
+          <div *ngIf="productForm.get('ProductName')?.invalid && productForm.get('ProductName')?.touched">
+            Product Name is required
+          </div>
+        </div>
+
+        <!-- Product Price -->
+        <div class="form-group mb-3">
+          <label for="productPrice" class="form-label">Product Price</label>
+          <input id="productPrice" type="number" class="form-control" formControlName="ProductPrice" />
+          <div *ngIf="productForm.get('ProductPrice')?.invalid && productForm.get('ProductPrice')?.touched">
+            Product Price is required and must be a positive number
+          </div>
+        </div>
+
+        <!-- Product Description -->
+        <div class="form-group mb-3">
+          <label for="productDescription" class="form-label">Product Description</label>
+          <textarea id="productDescription" class="form-control" formControlName="ProductDescription"></textarea>
+          <div *ngIf="productForm.get('ProductDescription')?.invalid && productForm.get('ProductDescription')?.touched">
+            Product Description is required
+          </div>
+        </div>
+
+        <!-- Created Date -->
+        <div class="form-group mb-3">
+          <label for="createdDate" class="form-label">Created Date</label>
+          <input id="createdDate" type="date" class="form-control" formControlName="CreatedDate" />
+          <div *ngIf="productForm.get('CreatedDate')?.invalid && productForm.get('CreatedDate')?.touched">
+            Created Date is required
+          </div>
+        </div>
+
+        <!-- Delivery Time Span -->
+        <div class="form-group mb-3">
+          <label for="deliveryTimeSpan" class="form-label">Delivery Time Span</label>
+          <input id="deliveryTimeSpan" type="text" class="form-control" formControlName="DeliveryTimeSpan" />
+        </div>
+
+        <!-- Category ID -->
+        <div class="form-group mb-3">
+          <label for="categoryId" class="form-label">Category ID</label>
+          <input id="categoryId" type="number" class="form-control" formControlName="CategoryId" />
+          <div *ngIf="productForm.get('CategoryId')?.invalid && productForm.get('CategoryId')?.touched">
+            Category ID is required
+          </div>
+        </div>
+
+        <!-- Product Image URL -->
+        <div class="form-group mb-3">
+          <label for="productImageUrl" class="form-label">Product Image URL</label>
+          <input id="productImageUrl" type="text" class="form-control" formControlName="ProductImageUrl" />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary" >Add Product</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<hr>
+<h1 style="text-align: center;text-decoration: double;">for ngModel</h1>
+
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h5>Add New Product</h5>
+    </div>
+    <div class="card-body">
       <form (ngSubmit)="addProduct()">
         <!-- Product ID -->
-        <div class="form-group mb-3">
+        <!-- <div class="form-group mb-3">
           <label for="productId" class="form-label">Product ID</label>
           <input id="productId" type="number" class="form-control" [(ngModel)]="productnew.ProductId" name="productId" />
-        </div>
+        </div> -->
 
         <!-- Product SKU -->
         <div class="form-group mb-3">
@@ -78,6 +165,15 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+<br>
+<br>
+<hr>
+
 
 
 <!-- for the categories test  -->

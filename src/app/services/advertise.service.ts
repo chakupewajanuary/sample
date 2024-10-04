@@ -8,6 +8,9 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class AdvertiseService {
 
+  //for the ProductId
+  private currentProductId=1000;
+
   //oobject hold http request api for product creats
   registerproductUrl='/api/amazon/CreateProduct';
 
@@ -22,9 +25,16 @@ export class AdvertiseService {
   constructor(private http:HttpClient) { }
 
   //used for the parameter
+
+  // method for increment productId
+    // Method to get the next ProductId
+    getNextProductId(): number {
+      this.currentProductId++; // Increment the counter
+      return this.currentProductId; // Return the next ProductId
+    }
   // ProductId: number,ProductSku: string, ProductName: string,ProductPrice: number,ProductShortName: string,ProductDescription: string,CreatedDate: string,DeliveryTimeSpan: string,CategoryId: number,ProductImageUrl: string,categoryName:string
 
-  registerProduct(register:{  ProductId: number, ProductSku: string, ProductName: string,ProductPrice: number,ProductShortName: string, ProductDescription: string, DeliveryTimeSpan: string ,ProductImageUrl: string, CreatedDate: string, CategoryId: number}): Observable<any>{
+  registerProduct(register:{  ProductId:number, ProductSku: string, ProductName: string,ProductPrice: number,ProductShortName: string, ProductDescription: string, DeliveryTimeSpan: string ,ProductImageUrl: string, CreatedDate: string, CategoryId: number}): Observable<any>{
     const headers=new HttpHeaders({
        'Content-Type': 'application/json-patch+json',
        'accept': 'text/plain'
