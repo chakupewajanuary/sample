@@ -24,7 +24,7 @@ export class AdvertiseService {
   //used for the parameter
   // ProductId: number,ProductSku: string, ProductName: string,ProductPrice: number,ProductShortName: string,ProductDescription: string,CreatedDate: string,DeliveryTimeSpan: string,CategoryId: number,ProductImageUrl: string,categoryName:string
 
-  registerProduct(register:{"ProductShortName": string,"ProductSku": string, }): Observable<any>{
+  registerProduct(register:{  ProductId: number, ProductSku: string, ProductName: string,ProductPrice: number,ProductShortName: string, ProductDescription: string, DeliveryTimeSpan: string ,ProductImageUrl: string, CreatedDate: string, CategoryId: number}): Observable<any>{
     const headers=new HttpHeaders({
        'Content-Type': 'application/json-patch+json',
        'accept': 'text/plain'
