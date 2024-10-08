@@ -53,7 +53,38 @@
               <strong>Price: ${{ product.productPrice }}</strong>
             </p>
           </div>
-          <div class="row" style=" box-sizing: border-box; box-sizing: content-box;">
+          <div class="row mb-2" style="box-sizing: border-box; box-sizing: content-box;">
+            <table style="width: 90%; max-height: 10%;margin-left: 10px; position: relative;">
+              <!-- <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Update</th>
+                  <th>Cancel</th>
+                </tr>
+              </thead> -->
+              <tbody>
+                <tr>
+                  <td style="padding: 10px;">
+                    <button class="btn btn-primary">
+                      <i class="fas fa-shopping-cart"></i> Order
+                    </button>
+                  </td>
+                  <td style="padding: 10px;">
+                    <button class="btn btn-secondary">
+                      <i class="fas fa-sync-alt"></i> Update
+                    </button>
+                  </td>
+                  <td style="padding: 10px;">
+                    <button class="btn btn-danger">
+                      <i class="fas fa-times"></i> Cancel
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- <div class="row" style=" box-sizing: border-box; box-sizing: content-box;">
             <div class="col-4 text-center">
               <label>Order</label>
               <button class="btn btn-primary mt-2" (click)="openModal()">
@@ -72,7 +103,7 @@
                 <i class="fas fa-times"></i> Cancel
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

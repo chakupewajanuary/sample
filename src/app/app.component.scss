@@ -27,3 +27,16 @@
   .menu-item:hover{
     text-decoration: underline;
   }
+  .dropdown-menu {
+    background-color: #333;
+    color: white;
+    border: none;
+  }
+  
+  .dropdown-menu a {
+    color: white;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #555;
+  }

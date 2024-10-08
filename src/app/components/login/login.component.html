@@ -1,9 +1,9 @@
-<div class="container">
-  <div class="login-container">
-    <h2>Login</h2>
+<!-- <div class="container">
+  <div class="container"class="container" style="margin: 0px 100px 20px;">
+    <h2 style="text-align: center;">Login</h2>
     <div class="container">
       <form (ngSubmit)="loginn()" #loginForm="ngForm">
-        <div>
+        <div class="container">
           <label for="userName">User Name</label>
           <input
             type="text"
@@ -29,6 +29,48 @@
     </div>
     
   </div>
+</div> -->
+<div class="container" style="margin: 20px  ;margin-left: 20%;">
+  <div>
+    <h2 style="text-align: center;">Register Customer</h2>
+    <form (ngSubmit)="loginn()">
+      <div>
+        <label for="name"> <i class="fas fa-building"></i>User Name</label>
+        <input type="text" [(ngModel)]="loginData.UserName" name="userName" required />
+      </div>
+     
+      <div>
+        <label for="password"><i class="fas fa-eye"></i>Password</label>
+        <input type="password" [(ngModel)]="loginData.UserPassword" name="UserPassword" required />
+      </div>
+      <!-- <div class="row mt-4">
+        <div class="col-6"> 
+          <button type="submit" style="width: 10px; margin-left: 30px;" class="btn btn-primary"(click)="loginn()">log to register</button></div>
+        <div class="col-6 text-end">
+          <button class="btn btn-secondary" style="width: 10px;" (click)="loginn()">  <i class="bi bi-box-arrow-in-right">Login to account</i> </button>
+        </div>
+      </div> -->
+
+        <div class="row">
+          <div class="col-6">
+            <button class="btn btn-danger"(click)="loginn()">register</button>
+          </div>
+          <div class="col-6 text-end">
+            <button class="btn btn-primary"(click)="loginn()">login</button>
+          </div>
+        </div>
+    
+    </form>
+  </div>
+
 </div>
+<form action="">
+  <div>
+    <label for="">date</label>
+    <input type="date" placeholder="date">
+  </div>
+</form>
+
+
 <p>login works!</p>
 

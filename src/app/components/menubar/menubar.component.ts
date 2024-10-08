@@ -25,6 +25,7 @@ export class MenubarComponent {
     "departmentName": "",
     "departmentLogo": ""
   };
+  loggedUser:any;
 
 
   constructor(private advise:AdvertiseService){}
@@ -44,6 +45,7 @@ export class MenubarComponent {
       }
     )
   }
+  onlogoff(){}
 
 }
 

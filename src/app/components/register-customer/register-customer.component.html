@@ -1,18 +1,18 @@
-<p>register-customer works!</p>
-<div class="container" style="margin: 0px 100px 20px;">
+<!-- <p>register-customer works!</p> -->
+<div class="container" style="margin: 0px 100px 20px; margin-left: 20%;">
   <div>
-    <h2 style="text-align: center;">Register Customer</h2>
+    <h2 style="text-align: center; color: green;">Register Customer</h2>
     <form (ngSubmit)="onRegister()">
       <div>
-        <label for="name">Name</label>
+        <label for="name" style="color:black;">Name</label>
         <input type="text" [(ngModel)]="customer.Name" name="name" required />
       </div>
       <div>
-        <label for="mobileNo">Mobile Number</label>
+        <label for="mobileNo"style="color:black;">Mobile Number</label>
         <input type="text" [(ngModel)]="customer.MobileNo" name="mobileNo" required />
       </div>
       <div>
-        <label for="password">Password</label>
+        <label for="password" style="color:black;">Password</label>
         <input type="password" [(ngModel)]="customer.Password" name="password" required />
       </div>
       <div class="row">
@@ -28,19 +28,3 @@
 </div>
 
 
-<!-- 
-<div class="parent">
-  <div class="container" id="container">
-    <div class="form-container sign-up">
-      <form>
-        <h1>Create Account</h1>
-        <span>Use your details for registration</span>
-        <input type="text" name="name" [(ngModel)]="customer.Name" placeholder="Name" />
-        <input type="text" name="mobile" [(ngModel)]="customer.MobileNo" placeholder="Mobile No" />
-        <input type="password" name="password" [(ngModel)]="customer.Password" placeholder="Password" />
-        <button (click)="onRegister()">Sign Up</button>
-        <button (click)="goToLogin()">Go to Login</button>
-      </form>
-    </div>
-  </div>
-</div> -->
