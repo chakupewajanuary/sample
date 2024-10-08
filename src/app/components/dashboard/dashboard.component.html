@@ -3,39 +3,42 @@
 </h1>
 
 <h1 style="text-align: center">Amazon Products</h1>
-<div class="container">
+
   <div
   style="
     display: grid;
     gap: 50px;
     grid-template-columns: auto auto auto;
-    background-color: #2196f3;
+    /* background-color: #2196f3; */
     padding: 10px;
     box-sizing: border-box;
     box-sizing: content-box;
     margin-left: 10px;
+    /* border-radius: 20%; */
     
   "
 >
 
-    <div class="row" style=" background-color: rgba(255, 255, 255, 0.8);
-    border: 1px 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    margin-left: 10px;
+    <div class="row" style="
+    /* background-color: rgb(220, 210, 210); */
     font-size: 30px;
     box-sizing: border-box;
     box-sizing: content-box;
-    text-align: center;">
+    text-align: center;
+   ">
       <div class="col-md-4"  *ngFor="let product of product; let i = index">
         <div class="card mb-4" style="  width: 300px;
-        border: 1px solid red;
+        border: 1px solid gray;
         box-sizing: border-box;
-        height: 400px;">
+        height: 400px;
+        border-radius: 50px;">
           <div 
             style="font-weight: bold; font-size: medium; color: green; text-transform: uppercase"
           >
             {{ product.productName }}
-            <img
+            <br>
+            <br>
+            <img style="border: 1px solid gray; border-radius: 2px; border-radius: 20%; background: grey;"
               [src]="product.productImageUrl"
               class="card-img-top"
               [ngClass]="{
@@ -55,13 +58,6 @@
           </div>
           <div class="row mb-2" style="box-sizing: border-box; box-sizing: content-box;">
             <table style="width: 90%; max-height: 10%;margin-left: 10px; position: relative;">
-              <!-- <thead>
-                <tr>
-                  <th>Order</th>
-                  <th>Update</th>
-                  <th>Cancel</th>
-                </tr>
-              </thead> -->
               <tbody>
                 <tr>
                   <td style="padding: 10px;">
@@ -83,31 +79,22 @@
               </tbody>
             </table>
           </div>
-          
-          <!-- <div class="row" style=" box-sizing: border-box; box-sizing: content-box;">
-            <div class="col-4 text-center">
-              <label>Order</label>
-              <button class="btn btn-primary mt-2" (click)="openModal()">
-                <i class="fas fa-shopping-cart"></i> Buy
-              </button>
-            </div>
-            <div class="col-4 text-center">
-              <label>Update</label>
-              <button class="btn btn-secondary mt-2">
-                <i class="fas fa-sync-alt"></i> Update
-              </button>
-            </div>
-            <div class="col-4 text-center">
-              <label>Cancel</label>
-              <button class="btn btn-danger mt-2">
-                <i class="fas fa-times"></i> Cancel
-              </button>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
  
 </div>
-</div>
+<!-- <div class="hugo4-pc-grid hugo4-pc-grid-1 hugo4-pc-grid-list combo-buy-container"><div class="hugo4-pc-grid-item"><div class="combo-buy-card"><div class="hugo4-floor-title hugo3-f hugo3-common-style-pc hugo4-pc-floor-title card"><div class="main-wrapper"><div><div class="hugo3-util-ellipsis title hugo3-fw-bold hugo3-fz-large line-2">Cross-industry picks</div></div></div></div><div class="list-container"><div class="theme-card"><a href="https://sale.alibaba.com/p/d2nw63xia/index.html?spm=a27aq.cp_15.7480498770.1.5f444e30cj7sfb&amp;wx_screen_direc=portrait&amp;wx_navbar_transparent=true&amp;path=/p/d2nw63xia/index.html&amp;ncms_spm=a27aq.26127229&amp;topOfferIds=1601035881097&amp;areaId=101700012&amp;cardId=10000972771&amp;tracelog=fy23_all_categories_home_lp" target="_blank" data-pid="1601035881097" class="hugo-dotelement hugo4-product hugo4-product-vertical hugo4-product-pc pc hugo3-common-style-pc product-style-pc small-card" data-appeared="true" data-has-appeared="true" data-before-current-y="281" data-spm-anchor-id="a27aq.cp_15.7480498770.1"><div class="pic-wrapper"><div class="hugo4-product-picture static radius picture-pc vertical"><img class="picture-image picture-image-6 " src="//s.alicdn.com/@sc04/kf/H4e4a5644638344488f44303d6a2e6d25u.jpg_250x250xz.jpg" loading="lazy"><div class="mask" data-spm-anchor-id="a27aq.cp_15.7480498770.i0.5f444e30cj7sfb"></div><div class="customize-top"></div><div class="customize-bottom"></div></div></div><div class="hugo4-product-wrap-margin wrap-margin-center wrap-margin-pc hugo3-f"><div class="hugo4-product-price-area first-field"></div><span class="combo-buy-card-title hugo3-fz-medium hugo3-fw-heavy hugo3-util-ellipsis line-2">Golf</span></div></a></div><div class="theme-card"><a href="https://sale.alibaba.com/p/d2nw63xia/index.html?spm=a27aq.cp_15.7480498770.2.5f444e30cj7sfb&amp;wx_screen_direc=portrait&amp;wx_navbar_transparent=true&amp;path=/p/d2nw63xia/index.html&amp;ncms_spm=a27aq.26127229&amp;topOfferIds=1600557813905&amp;areaId=101700012&amp;cardId=10001182910&amp;tracelog=fy23_all_categories_home_lp" target="_blank" data-pid="1600557813905" class="hugo-dotelement hugo4-product hugo4-product-vertical hugo4-product-pc pc hugo3-common-style-pc product-style-pc small-card" data-appeared="true" data-has-appeared="true" data-before-current-y="281" data-spm-anchor-id="a27aq.cp_15.7480498770.2"><div class="pic-wrapper"><div class="hugo4-product-picture static radius picture-pc vertical"><img class="picture-image picture-image-6 " src="//s.alicdn.com/@sc04/kf/H0cf4c089df3a4292b74055521421662b2.jpg_250x250xz.jpg" loading="lazy"><div class="mask"></div><div class="customize-top"></div><div class="customize-bottom"></div></div></div><div class="hugo4-product-wrap-margin wrap-margin-center wrap-margin-pc hugo3-f"><div class="hugo4-product-price-area first-field"></div><span class="combo-buy-card-title hugo3-fz-medium hugo3-fw-heavy hugo3-util-ellipsis line-2">Mobile Game Accessories</span></div></a></div><div class="theme-card"><a href="https://sale.alibaba.com/p/d2nw63xia/index.html?spm=a27aq.cp_15.7480498770.3.5f444e30cj7sfb&amp;wx_screen_direc=portrait&amp;wx_navbar_transparent=true&amp;path=/p/d2nw63xia/index.html&amp;ncms_spm=a27aq.26127229&amp;topOfferIds=1600439145404&amp;areaId=101700012&amp;cardId=10001437286&amp;tracelog=fy23_all_categories_home_lp" target="_blank" data-pid="1600439145404" class="hugo-dotelement hugo4-product hugo4-product-vertical hugo4-product-pc pc hugo3-common-style-pc product-style-pc small-card" data-appeared="true" data-has-appeared="true" data-before-current-y="281" data-spm-anchor-id="a27aq.cp_15.7480498770.3"><div class="pic-wrapper"><div class="hugo4-product-picture static radius picture-pc vertical"><img class="picture-image picture-image-6 " src="//s.alicdn.com/@sc04/kf/Hf92921484273416f89127d0f4eabac11Z.jpg_250x250xz.jpg" loading="lazy"><div class="mask"></div><div class="customize-top"></div><div class="customize-bottom"></div></div></div><div class="hugo4-product-wrap-margin wrap-margin-center wrap-margin-pc hugo3-f"><div class="hugo4-product-price-area first-field"></div><span class="combo-buy-card-title hugo3-fz-medium hugo3-fw-heavy hugo3-util-ellipsis line-2">Jewelry Care &amp; Cleaning</span></div></a></div><div class="theme-card"><a href="https://sale.alibaba.com/p/d2nw63xia/index.html?spm=a27aq.cp_15.7480498770.4.5f444e30cj7sfb&amp;wx_screen_direc=portrait&amp;wx_navbar_transparent=true&amp;path=/p/d2nw63xia/index.html&amp;ncms_spm=a27aq.26127229&amp;topOfferIds=1600593895816&amp;areaId=101700012&amp;cardId=10001063294&amp;tracelog=fy23_all_categories_home_lp" target="_blank" data-pid="1600593895816" class="hugo-dotelement hugo4-product hugo4-product-vertical hugo4-product-pc pc hugo3-common-style-pc product-style-pc small-card" data-appeared="true" data-has-appeared="true" data-before-current-y="281" data-spm-anchor-id="a27aq.cp_15.7480498770.4"><div class="pic-wrapper"><div class="hugo4-product-picture static radius picture-pc vertical"><img class="picture-image picture-image-6 " src="//s.alicdn.com/@sc04/kf/H92a0087379034ca8ae0312b0809c77e1O.jpg_250x250xz.jpg" loading="lazy"><div class="mask"></div><div class="customize-top"></div><div class="customize-bottom"></div></div></div><div class="hugo4-product-wrap-margin wrap-margin-center wrap-margin-pc hugo3-f"><div class="hugo4-product-price-area first-field"></div><span class="combo-buy-card-title hugo3-fz-medium hugo3-fw-heavy hugo3-util-ellipsis line-2">Parties for Wedding</span></div></a></div><div class="theme-card"><a href="https://sale.alibaba.com/p/d2nw63xia/index.html?spm=a27aq.cp_15.7480498770.5.5f444e30cj7sfb&amp;wx_screen_direc=portrait&amp;wx_navbar_transparent=true&amp;path=/p/d2nw63xia/index.html&amp;ncms_spm=a27aq.26127229&amp;topOfferIds=1600659297621&amp;areaId=101700012&amp;cardId=10004955717&amp;tracelog=fy23_all_categories_home_lp" target="_blank" data-pid="1600659297621" class="hugo-dotelement hugo4-product hugo4-product-vertical hugo4-product-pc pc hugo3-common-style-pc product-style-pc small-card" data-appeared="false" data-has-appeared="true" data-before-current-y="175" data-spm-anchor-id="a27aq.cp_15.7480498770.5" data-has-disappeared="true"><div class="pic-wrapper"><div class="hugo4-product-picture static radius picture-pc vertical"><img class="picture-image picture-image-6 " src="//s.alicdn.com/@sc04/kf/H63876bbf7c904c75a7c980cc31f002cch.jpg_250x250xz.jpg" loading="lazy"><div class="mask"></div><div class="customize-top"></div><div class="customize-bottom"></div></div></div><div class="hugo4-product-wrap-margin wrap-margin-center wrap-margin-pc hugo3-f"><div class="hugo4-product-price-area first-field"></div><span class="combo-buy-card-title hugo3-fz-medium hugo3-fw-heavy hugo3-util-ellipsis line-2">White Water Rafting</span></div></a></div><div class="theme-card"><a href="https://sale.alibaba.com/p/d2nw63xia/index.html?spm=a27aq.cp_15.7480498770.6.5f444e30cj7sfb&amp;wx_screen_direc=portrait&amp;wx_navbar_transparent=true&amp;path=/p/d2nw63xia/index.html&amp;ncms_spm=a27aq.26127229&amp;topOfferIds=1600965995752&amp;areaId=101700012&amp;cardId=10000972737&amp;tracelog=fy23_all_categories_home_lp" target="_blank" data-pid="1600965995752" class="hugo-dotelement hugo4-product hugo4-product-vertical hugo4-product-pc pc hugo3-common-style-pc product-style-pc small-card" data-appeared="false" data-has-appeared="true" data-before-current-y="175" data-spm-anchor-id="a27aq.cp_15.7480498770.6" data-has-disappeared="true"><div class="pic-wrapper"><div class="hugo4-product-picture static radius picture-pc vertical"><img class="picture-image picture-image-6 " src="//s.alicdn.com/@sc04/kf/H71e8539e39784e45b9e48f19d6ed40259.jpg_250x250xz.jpg" loading="lazy"><div class="mask"></div><div class="customize-top"></div><div class="customize-bottom"></div></div></div><div class="hugo4-product-wrap-margin wrap-margin-center wrap-margin-pc hugo3-f"><div class="hugo4-product-price-area first-field"></div><span class="combo-buy-card-title hugo3-fz-medium hugo3-fw-heavy hugo3-util-ellipsis line-2">Swimming</span></div></a></div></div></div></div></div>
 
+<div class="mask" data-spm-anchor-id="a27aq.cp_15.3885147500.i0.5f444e30wouzcE"></div> -->
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card card-block" *ngFor="let pro of product">
+      {{pro.productName}}
+      <img   [src]="pro.productImageUrl" alt="">
+      <p><small>{{pro.productDescription}}</small></p>
+      <p><strong>{{pro.productPrice}}</strong></p>
+
+    </div>
+  </div>
+</div>
