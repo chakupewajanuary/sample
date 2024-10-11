@@ -13,13 +13,23 @@ import { AdvertiseService } from '../../services/advertise.service';
   styleUrl: './menubar.component.scss'
 })
 export class MenubarComponent {
+  // old for droupdown-list
   ismenuOpen:boolean=false;
   toogleMenu():void{
     this.ismenuOpen=!this.ismenuOpen
   }
-  clickOutside():void{
-    this.ismenuOpen=false;
+  // clickOutside():void{
+  //   this.ismenuOpen=false;
+  // }
+
+  //new for enhancing understanding
+  isLearly:boolean=false;
+  trigler(){
+    this.isLearly!=this.isLearly;
   }
+
+
+
   department :any={
     "departmentId": 0,
     "departmentName": "",

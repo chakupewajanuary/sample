@@ -38,5 +38,14 @@
   }
   
   .dropdown-menu a:hover {
-    background-color: #555;
+    // background-color: #555;
+    background-color: rebeccapurple;
+  }
+  .scroll-cont{
+    max-height: 600px; /* Set the maximum height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding: 1rem;
+    // border: 1px solid #ddd;
+    border-radius: 8px;
   }

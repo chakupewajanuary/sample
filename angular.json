@@ -91,9 +91,14 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "scr/assets/image/mzumbe.jpeg",
+              "scr/assets/mzumbe.jpeg",
+              "public/favicon.icon",
               {
-                "glob": "**/*",
-                "input": "public"
+                "glob": "**.*",
+                "input": "/image/mzumbe.jpeg",
+                "output": "/image/"            
+
               }
             ],
             "styles": [

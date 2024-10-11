@@ -26,3 +26,38 @@
   background-color: #04AA6D;
   color: white;
 }
+
+
+
+// my own from codepen for droupdown
+.btn{
+  background: white;
+  color: blue;
+  border: none;
+}
+.dropdown {
+  margin-left: 220px;
+  display: inline-block;
+  position: relative;
+}
+.dropdown-container{
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+.dropdown:hover .dropdown-container {
+    display: block;
+}
+.dropdown-container a{
+  display: block;
+  color: green;
+  text-decoration: none;
+  padding: 5px;
+}
+.dropdown-container a:hover {
+    color: grey;
+    background-color: #00A4BD;
+}

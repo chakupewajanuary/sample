@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Component } from '@angular/core';
 import { ProductRegisterComponent } from './components/product-register/product-register.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
+import { OrderBuyComponent } from './components/order-buy/order-buy.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'register', pathMatch: 'full' },
@@ -17,6 +18,7 @@ export const routes: Routes = [
      { path: 'home', component: DashboardComponent },
      { path:'postproduct', component:ProductRegisterComponent},
      { path: 'navbar', component: MenubarComponent },
+     { path: 'buy' , component:OrderBuyComponent}
     
 ];
 

@@ -1,18 +1,87 @@
-.resized-image {
-    width: 200px; /* or whatever size you want */
-  }
+// .resized-image {
+//     width: 80%;/* or whatever size you want */
+//     height: 50%;
+//     border-radius: 50%;
+//   }
   
-  .enlarged-image {
-    width: 300px; /* or whatever enlarged size you want */
+//   .enlarged-image {
+//     width: 300px; /* or whatever enlarged size you want */
+//   }
+  
+  .product-name{
+    display: -webkit-box;              /* Creates a flexible layout */
+    -webkit-line-clamp: 1;             /* Limits to 2 lines */
+    -webkit-box-orient: vertical;      /* Orients the text vertically */
+    overflow: hidden;                  /* Hides any overflow text */
+    text-overflow: ellipsis;           /* Adds '...' at the end */
+    max-width: 100%; 
   }
-  // * {
-  //   box-sizing: border-box;
-  // }
   .product-description {
     display: -webkit-box;              /* Creates a flexible layout */
-    -webkit-line-clamp: 2;             /* Limits to 2 lines */
+    -webkit-line-clamp: 1;             /* Limits to 2 lines */
     -webkit-box-orient: vertical;      /* Orients the text vertically */
     overflow: hidden;                  /* Hides any overflow text */
     text-overflow: ellipsis;           /* Adds '...' at the end */
     max-width: 100%;                   /* Adjust the width based on your design */
+  }
+ 
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adds space between cards */
+  }
+  
+  .col-md-3 {
+    flex: 1 1 23%; /* Allows four cards per row */
+    max-width: 90%; /* Set max width for each card in row */
+  }
+  
+  .card {
+    height: 300px; /* Consistent height for each card */
+    box-sizing: content-box;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-img-top {
+    box-sizing: border-box;
+    height: 120px; /* Set a specific height */
+    width: 100%;
+    border-radius: 50%;
+    object-fit: contain; /* Display the full image */
+    border-radius: 4px;
+    background-color: #f8f8f8; /* Optional: add a background color if the image does not cover the full area */
+  }
+  
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  // .scroll-cont{
+  //   max-height: 600px; /* Set the maximum height for the scrollable area */
+  //   overflow-y: auto; /* Enable vertical scrolling */
+  //   overflow-x: hidden; /* Prevent horizontal scrolling */
+  //   padding: 1rem;
+  //   border: 1px solid #ddd;
+  //   border-radius: 8px;
+  // }
+
+  .img-fluid{
+   width: 100%;
+   height: 50%;
+   border-radius: 50%;
+  
   }

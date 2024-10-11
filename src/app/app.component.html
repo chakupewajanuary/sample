@@ -1,5 +1,5 @@
 
-<div class="container mt-4">
+<div class="container mt-4 scroll-cont">
    <!-- Heading -->
    <h1 class="text-center text-primary mb-4">Welcome to our business platform</h1>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -19,6 +19,9 @@
         </li>
         <li class="nav-item ms-auto" style="margin-right: 0; padding-right: 0;">
           <a class="nav-link" routerLink="/navbar" routerLinkActive="active" href="">navabar</a>
+        </li>
+        <li class="nav-item ms-auto" style="margin-right: 0; padding-right: 0;">
+          <a class="nav-link" routerLink="/buy" routerLinkActive="active" href="">Buy</a>
         </li>
       </ul>
   
@@ -73,7 +76,10 @@
 </div>
 
   <footer style="text-align: center; margin-top: 2%;">
-    <p>&copy; 2024 International Trade Cooperation. All rights reserved.</p>
+    <p>{{ currentDatetime | date:'EEEE, MMMM d, y, h:mm:ss a' }}</p>
+      <p>&copy; {{ currentYear }} chakupewa Delivery Company. All rights reserved.</p>
+    <!-- <p>&copy; 2024 International Trade Cooperation. All rights reserved.</p> -->
+    <!-- <p>&copy; {{ currentYear }} Your Company Name. All rights reserved.</p> -->
   </footer>
   
 </div>
