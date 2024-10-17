@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 import { ProductRegisterComponent } from './components/product-register/product-register.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
 import { OrderBuyComponent } from './components/order-buy/order-buy.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'register', pathMatch: 'full' },
@@ -15,10 +16,11 @@ export const routes: Routes = [
     //     path:'home',title:'login/home', component: DashboardComponent
     // }    
     // ] },
-     { path: 'home', component: DashboardComponent },
-     { path:'postproduct', component:ProductRegisterComponent},
+     { path: 'home', component : DashboardComponent },
+     { path:'postproduct', component : ProductRegisterComponent },
      { path: 'navbar', component: MenubarComponent },
-     { path: 'buy' , component:OrderBuyComponent}
+     { path: 'buy' , component : OrderBuyComponent },
+     { path: 'Admin' , component : AdminComponent }
     
 ];
 

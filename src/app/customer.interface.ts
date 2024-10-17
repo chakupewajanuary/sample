@@ -4,3 +4,9 @@ export interface Customer {
   MobileNo: string;
   Password: string;
 }
+
+// for admin uses
+export interface CustomerReg {
+  CustId: number;
+  Name: string;
+}

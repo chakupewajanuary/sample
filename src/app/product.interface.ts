@@ -20,3 +20,10 @@ export interface prodctRegister {
   ProductImageUrl: string;
   categoryName:string;
 }
+
+// for the admin uses
+export interface productSaved {
+  ProductId: number;
+  ProductName: string;
+
+}
