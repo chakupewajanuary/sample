@@ -1,0 +1,248 @@
+.dropdown {
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    display: inline-block;
+    position: relative;
+ }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+}
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
+// my own from codepen
+.btn{
+    background: white;
+    color: blue;
+    border: none;
+  }
+  .dropdown {
+    margin-left: 220px;
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-container{
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+  }
+  .dropdown:hover .dropdown-container {
+      display: block;
+  }
+  .dropdown-container a{
+    display: block;
+    color: green;
+    text-decoration: none;
+    padding: 5px;
+    width: 90%;
+  }
+  .dropdown-container a:hover {
+      color: grey;
+      background-color: #00A4BD;
+  }
+
+
+
+
+// style for the navbar dropdown menu
+.navbar {
+    background-color: #333;
+    position: relative;
+    z-index: 999;
+    margin-bottom: 10%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: black;
+    
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar li a {
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* Style the dropdown menu */
+.navbar ul ul {
+    position: absolute;
+    top: 100%;
+    display: none;
+}
+
+.navbar ul ul li {
+    display: block;
+}
+
+.navbar li:hover ul {
+    display: block;
+}
+
+/* Change the background color of dropdown links on hover */
+.navbar ul ul li a:hover {
+    background-color: #555;
+}
+
+
+
+
+
+
+
+
+//for the accessibility
+ /* Style dropdown menus and submenus */
+ .dropdown-menu, .submenu {
+    position: relative;
+    display: inline-block;
+  }
+/* Style the content dropdown list  */
+  .dropdown-list, .submenu-list {
+    display: none;
+    position: absolute;
+    background-color: gray;
+    min-width: 160px;
+    box-shadow: 0 8px 8px  white;
+ 
+  }
+
+/* Show submenu content on focus */
+  .dropdown-menu:hover .dropdown-list, 
+  .submenu:hover .submenu-list {
+    display: block;
+  }
+
+/* Style the links within submenu list */
+  .dropdown-list a, .submenu-list a {
+    color: white;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .submenu-list {
+    left: 100%;
+    top: 0;
+  }
+
+
+
+
+
+// 15th October 2024 coded
+
+// for the the whole container(pannel)
+.comb{
+  margin-left: 200px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  width: 100px;
+  display: inline-block;
+  position: relative;
+}
+
+//for the whole link event the child link(routes)
+.comb-content{
+  display: none;
+
+}
+//for the link (routes)
+.comb-content a {
+  display: block;
+  text-decoration: none;
+  color: white;
+
+}
+//Once hover (touch ) happens
+.comb:hover .comb-content{
+ background-color:black;
+  display: block;
+  // color: white;
+  width: 100px;
+}
+// once touch the li 
+.comb-content ul li:hover {
+  display: block;
+}
+// once touch the actual a(link)
+.comb-content ul li a:hover {
+  background-color: red;
+  display: block;
+  // display: none;
+}
+
+.comb .comb-content a:hover{
+  background-color: #000000;
+  color: green
+}
+
+
+// for the trail again for the understanding
+.wago{
+  display: block;
+  max-width: 50%;
+  // background-color: purple;
+}
+.pie{
+  display: none;
+  background-color: purple;
+}
+.wago:hover .pie{
+  display: block;
+}
+.pie ul li  {
+  list-style: none;
+
+}
+.pie ul li a {
+  text-decoration: none;
+}
+.pie ul li a:hover {
+  border: 1px red solid;
+  background-color: #000000;
+}
+
+.subcome{
+  display : block;
+  
+}
+.subcome ol{
+  display: none;
+  
+}
+.subcome:hover ol {
+  display: block;
+}
+.subcome ol li a:hover{
+  background-color: goldenrod;
+}
+
+

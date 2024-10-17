@@ -1,0 +1,20 @@
+<p>last-few-transactions works!</p>
+
+<div class="transactions">
+    <div class="title">Last few Transactions</div>
+    <div class="transaction-wrapper">
+        <div class="transaction" *ngFor="let transaction of Transaction">
+            <div class="image">
+                <img  src="https://dummyimage.com/400x300/00ff00/000" alt="">
+            </div>
+            <div class="title">{{transaction.title}}</div>
+            <div class="price">{{transaction.Price}}</div>
+            <div class="shop-location">
+                <div class="shop">{{transaction.shop}}</div>
+                <div class="location">{{transaction.Location}}</div>
+            </div>
+
+            <div class="status">{{transaction.Status}}</div>
+        </div>
+    </div>
+</div>
