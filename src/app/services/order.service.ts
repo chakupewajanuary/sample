@@ -10,21 +10,21 @@ import { from, Observable, switchMap } from 'rxjs';
 export class OrderService {
   //object for the url(api =>endpoint)
   apiUrl='https://freeapi.gerasim.in/api/amazon/PlaceOrder';
+  // apiUrl='/api/amazon/PlaceOrder'
 
   constructor(
     private http :HttpClient,
     private indexedDbService: IndexeddbService
   ) { }
 
-  // placeOrder(orderData:Order):Observable<any>{
-  //   return from(this.indexedDbService.add({...orderData, status: 'pending'})).pipe(
-  //     switchMap(()=>this.syn)
-  //   )
-  // }
-  placeOrder(orderData: Order): Observable<any> {
-    return from(this.indexedDbService.add({ ...orderData, status: 'pending' })).pipe(
-      switchMap(() => this.syncWithServer())
-    );
+
+
+
+  async placeOrder(orderData: Order): Promise<any> {
+    await this.indexedDbService.waitForDb();
+    const addedOrder = await this.indexedDbService.add({ ...orderData, status: 'pending' });
+    this.syncWithServer().subscribe();
+    return addedOrder;
   }
 
   private syncWithServer(): Observable<any> {
@@ -35,6 +35,25 @@ export class OrderService {
       })
     );
   }
+  // placeOrder(orderData:Order):Observable<any>{
+  //   return from(this.indexedDbService.add({...orderData, status: 'pending'})).pipe(
+  //     switchMap(()=>this.syn)
+  //   )
+  // }
+  // placeOrder(orderData: Order): Observable<any> {
+  //   return from(this.indexedDbService.add({ ...orderData, status: 'pending' })).pipe(
+  //     switchMap(() => this.syncWithServer())
+  //   );
+  // }
+
+  // private syncWithServer(): Observable<any> {
+  //   return from(this.getPendingOrders()).pipe(
+  //     switchMap(orders => {
+  //       const syncPromises = orders.map(order => this.sendOrderToServer(order));
+  //       return from(Promise.all(syncPromises));
+  //     })
+  //   );
+  // }
 
   private getPendingOrders(): Promise<Order[]> {
     return this.indexedDbService.getAll().then(orders => 

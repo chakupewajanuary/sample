@@ -177,3 +177,22 @@
     </div>
 
    </section>
+
+
+
+   <!-- for the orderplace on the way to insure the indexdb work fine -->
+
+<div class="container">
+  <h2>for the order delete </h2>
+  <div *ngIf="orders.length === 0">No orders found.</div>
+<ul *ngIf="orders.length > 0">
+  <li *ngFor="let order of orders">
+    Order #{{ order.id }} - Total: {{ order.TotalInvoiceAmount | currency }}
+    <span>Status: {{ order.status }}</span>
+    <button (click)="deleteOrder(order.id)">Delete</button>
+  </li>
+</ul>
+</div>
+  
+
+<div style="margin-bottom: 100px;"> </div>

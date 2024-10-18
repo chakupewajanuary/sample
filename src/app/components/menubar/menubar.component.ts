@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AdvertiseService } from '../../services/advertise.service';
+import { OrderService } from '../../services/order.service';
+import { Order } from '../../order.interface';
 
 @Component({
   selector: 'app-menubar',
@@ -12,7 +14,7 @@ import { AdvertiseService } from '../../services/advertise.service';
   templateUrl: './menubar.component.html',
   styleUrl: './menubar.component.scss'
 })
-export class MenubarComponent {
+export class MenubarComponent implements OnInit {
   // old for droupdown-list
   ismenuOpen:boolean=false;
   toogleMenu():void{
@@ -37,8 +39,38 @@ export class MenubarComponent {
   };
   loggedUser:any;
 
+  // object for the order
+ orders:Order[]=[]
 
-  constructor(private advise:AdvertiseService){}
+  constructor(
+    private advise:AdvertiseService,
+    private orderservice:OrderService
+  ){}
+  ngOnInit(): void {
+    
+  }
+
+  async loadOrders(){
+    try{
+      this.orders=await this.orderservice.getOrders();
+    }catch(error){
+      console.error('Error Loading Orders',error)
+    }
+  }
+  
+  async deleteOrder(id:number |undefined){
+    if (id === undefined) {
+      console.error('Cannot delete order with undefined id');
+      return;
+    }
+    try{
+      await this.orderservice.deleteOrder(id);
+      this.loadOrders();
+    }
+    catch(error){
+      console.error('Error deleting order',error);
+    }
+  }
  
   //reloading outside
   subDepartment(){
@@ -57,7 +89,12 @@ export class MenubarComponent {
   }
   onlogoff(){}
 
+ 
+
 }
+
+
+
 
 
 //for the reloading in the proxy.conf.json

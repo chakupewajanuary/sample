@@ -8,46 +8,86 @@ export class IndexeddbService {
   private db : IDBDatabase | null = null;
   private dbName ='OrderDb';
   private storeName='orders';
+  private dbReady: Promise<void>;
 
-  constructor() { }
+  constructor() {
+    this.dbReady = this.initDb();
+   }
 
   private initDb():Promise<void>{
+    // return new Promise((resolve, reject) => {
+    //   const request = indexedDB.open( this.dbName , 1);
+
+    //   request.onerror=()=> reject('Error Opening database');
+
+    //   request.onsuccess=()=>{
+    //     this.db=request.result;
+    //     resolve();
+    //   };
+
+    //   request.onupgradeneeded =(event:IDBVersionChangeEvent)=>{
+    //     const db=(event.target as IDBOpenDBRequest).result;
+    //     db.createObjectStore(this.storeName, { keyPath : 'id', autoIncrement:true});
+    //   };
+
+      
+    // });
     return new Promise((resolve, reject) => {
-      const request = indexedDB.open( this.dbName , 1);
+      const request = indexedDB.open(this.dbName, 1);
 
-      request.onerror=()=> reject('Error Opening database');
+      request.onerror = () => reject('Error opening database');
 
-      request.onsuccess=()=>{
-        this.db=request.result;
+      request.onsuccess = () => {
+        this.db = request.result;
         resolve();
       };
 
-      request.onupgradeneeded =(event:IDBVersionChangeEvent)=>{
-        const db=(event.target as IDBOpenDBRequest).result;
-        db.createObjectStore(this.storeName, { keyPath : 'id', autoIncrement:true});
+      request.onupgradeneeded = (event: IDBVersionChangeEvent) => {
+        const db = (event.target as IDBOpenDBRequest).result;
+        db.createObjectStore(this.storeName, { keyPath: 'id', autoIncrement: true });
       };
-
-      
     });
   }
-
-  add(item:any):Promise<any>{
+  async waitForDb(): Promise<void> {
+    return this.dbReady;
+  }
+  async add(item: any): Promise<any> {
+    await this.waitForDb();
     return new Promise((resolve, reject) => {
-      if(!this.db){
+      if (!this.db) {
         reject('Database not initialized');
         return;
       }
 
-      const transaction = this.db.transaction([this.storeName],'readwrite');
+      const transaction = this.db.transaction([this.storeName], 'readwrite');
       const store = transaction.objectStore(this.storeName);
-      const request =store.add(item);
+      const request = store.add(item);
 
-      request.onerror=()=>reject('Error adding item to IndexedDB');
-      request.onsuccess=()=>resolve(request.result);
-      
+      request.onerror = () => reject('Error adding item to IndexedDB');
+      request.onsuccess = () => resolve(request.result);
     });
   }
-  getAll():Promise<any[]>{
+  // add(item:any):Promise<any>{
+  //   return new Promise((resolve, reject) => {
+  //     if(!this.db){
+  //       reject('Database not initialized');
+  //       return;
+  //     }
+
+  //     const transaction = this.db.transaction([this.storeName],'readwrite');
+  //     const store = transaction.objectStore(this.storeName);
+  //     const request =store.add(item);
+
+  //     request.onerror=()=>reject('Error adding item to IndexedDB');
+  //     request.onsuccess=()=>resolve(request.result);
+      
+  //   });
+  // }
+
+
+
+
+  async  getAll():Promise<any[]>{
     return new Promise((resolve, reject) => {
       if(!this.db){
         reject('Database not initialized');
@@ -65,7 +105,7 @@ export class IndexeddbService {
   }
 
 
-  update(item: any): Promise<void> {
+ async update(item: any): Promise<void> {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         reject('Database not initialized');
@@ -82,7 +122,7 @@ export class IndexeddbService {
   }
 
   
-  delete(id: number): Promise<void> {
+  async delete(id: number): Promise<void> {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         reject('Database not initialized');

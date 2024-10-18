@@ -36,14 +36,24 @@ export class OrderBuyComponent  {
     private router:Router
   ) {}
 
-  onSubmit(){
-    this.orderservice.placeOrder(this.order).subscribe(
-      ()=>{
-        console.log('Order placed successfully');
-        this.router.navigate(['/orders']);
-      },
-      error => console.error('Error placing order', error)
-    );
+  // onSubmit(){
+  //   this.orderservice.placeOrder(this.order).subscribe(
+  //     ()=>{
+  //       console.log('Order placed successfully');
+  //       this.router.navigate(['/navbar']);
+  //     },
+  //     error => console.error('Error placing order', error)
+  //   );
+  // }
+  async onSubmit() {
+    debugger;
+    try {
+      await this.orderservice.placeOrder(this.order);
+      console.log('Order placed successfully');
+      this.router.navigate(['/navbar']);
+    } catch (error) {
+      console.error('Error placing order', error);
+    }
   }
  
 }
