@@ -1,20 +1,49 @@
 import { Component } from '@angular/core';
+import { OrderService } from '../../services/order.service';
+import { Router } from '@angular/router';
+import { Order } from '../../order.interface';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-order-buy',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,FormsModule],
   templateUrl: './order-buy.component.html',
   styleUrls: ['./order-buy.component.scss']
 })
 export class OrderBuyComponent  {
 
- 
 
+  //intialization of the order
+  order:Order={
+    SaleId: 0,
+    CustId: 0,
+    SaleDate: new Date().toISOString(),
+    TotalInvoiceAmount: 0,
+    Discount: 0,
+    PaymentNaration: '',
+    DeliveryAddress1: '',
+    DeliveryAddress2: '',
+    DeliveryCity: '',
+    DeliveryPinCode: '',
+    DeliveryLandMark: '',
+    status: 'pending'
+  };
 
+  constructor(
+    private orderservice:OrderService,
+    private router:Router
+  ) {}
 
-  constructor() {}
-
-
+  onSubmit(){
+    this.orderservice.placeOrder(this.order).subscribe(
+      ()=>{
+        console.log('Order placed successfully');
+        this.router.navigate(['/orders']);
+      },
+      error => console.error('Error placing order', error)
+    );
+  }
  
 }

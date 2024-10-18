@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit{
   //path for the image
   // fallbackImage:string= "assets/image/mzumbe.jpeg";
   // image1:string="assets/mzumbe.jpeg";
-  fallbackImage:string="https://dummyimage.com/400x300/00ff00/000";
+  fallbackImage:string="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
   getImageUrl(imageUrl: string): string {
     console.log(`this my image from my computer`,this.fallbackImage)

@@ -270,3 +270,118 @@
  <div style="margin-bottom: 900px;">
 
 </div>
+
+
+
+<!-- for the placeorder -->
+
+
+<h1 style="color: purple; text-transform: uppercase;">IndexDB for the trial </h1>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>welcome to place order</h1>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div class="row mt-4">
+                    <div class="row">
+                        <div class="col-4">
+                         <div class="row">
+                            <label for="">CustId</label>
+                         </div>
+                         <div class="row">
+                              <input [(ngModel)]="order.CustId" name="CustId" placeholder="Customer ID" required>
+                         </div>
+                        </div>
+                        
+                        <div class="col-4">
+                            <div class="row">
+                                <label for="">TotalInvoiceAmount</label>
+                            </div>
+                            <div class="row">
+                               <input [(ngModel)]="order.TotalInvoiceAmount" name="TotalInvoiceAmount" placeholder="Total Amount" required>
+                            </div>
+                           </div>
+
+                           <div class="col-4">
+                            <div class="row">
+                                <label for="">Discount</label>
+                            </div>
+                            <div class="row">
+                                <input [(ngModel)]="order.Discount" name="Discount" placeholder="Discount">
+
+                            </div>
+                           </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                          <div class="row">
+                            <label for="">PaymentNaration</label>
+                          </div>
+                          <div class="row">
+                            <input [(ngModel)]="order.PaymentNaration" name="PaymentNaration" placeholder="Payment Narration">            
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label for="">DeliveryAddress1</label>
+                            </div>
+                            <div class="row">
+                                <input [(ngModel)]="order.DeliveryAddress1" name="DeliveryAddress1" placeholder="Address Line 1" required>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label for="">DeliveryAddress2</label>
+                            </div>
+                            <div class="row">
+                                <input [(ngModel)]="order.DeliveryAddress2" name="DeliveryAddress2" placeholder="Address Line 2"> 
+                            </div>
+                          </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                               <label for="">DeliveryCity</label>
+                            </div>
+                            <div class="row">
+                               <input [(ngModel)]="order.DeliveryCity" name="DeliveryCity" placeholder="City" required>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label for="">DeliveryPinCode</label>
+                            </div>
+                            <div class="row">
+                                <input [(ngModel)]="order.DeliveryPinCode" name="DeliveryPinCode" placeholder="Pin Code" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label for="">DeliveryLandMark</label>
+                            </div>
+                            <div class="row">
+                              <input [(ngModel)]="order.DeliveryLandMark" name="DeliveryLandMark" placeholder="Landmark">
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    
+                </div>               
+                
+               <button class="btn btn-primary" type="submit"><i class="fas fa-add"> </i>Place Order</button>
+              </form>
+        </div>
+    </div>
+  
+</div>
