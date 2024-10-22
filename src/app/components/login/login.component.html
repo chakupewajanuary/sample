@@ -75,7 +75,28 @@
 <p>login works!</p>
 
 
-<div>
+<!-- <div>
   <img src="../../../assets/mzumbe.jpeg" alt="mzumbe.jpeg">
+</div> -->
+
+
+ <!-- for the animation trail -->
+<!-- Image Wrapper for the Animation -->
+<div class="image-wrapper">
+  <!-- Loading Spinner -->
+  <div class="spinner-wrapper" *ngIf="!isLoaded">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Image with animation and visibility classes -->
+  <img 
+    [src]="imageUrl" 
+    [alt]="alt" 
+    (load)="onImageLoad()" 
+    [@imageAnimation]="isLoaded"
+    [class.visible]="isLoaded"
+  >
 </div>
 
+<!-- <img src="../../../assets/mzumbe.jpeg" alt="mzumbe.jpeg">
+<img src="../../../assets/mzumbe.jpeg" alt="mzumbe.jpeg"> -->

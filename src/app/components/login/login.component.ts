@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
@@ -8,13 +8,24 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { Customer } from '../../customer.interface';
 import { CustomerService } from '../../services/customer.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [DashboardComponent, FormsModule, CommonModule, HttpClientModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [ // <-- Add animations property here
+    trigger('imageAnimation', [
+      transition('false => true', [
+        style({ opacity: 0, transform: 'scale(0.95)' }),
+        animate('0.4s ease-out', 
+          style({ opacity: 1, transform: 'scale(1)' })
+        )
+      ])
+    ])
+  ]
 })
 export class LoginComponent implements OnInit {
   loginData: Login = { UserName: '', UserPassword: '' }; // Login interface object
@@ -94,5 +105,12 @@ export class LoginComponent implements OnInit {
       // Navigate to order page on register page
       this.router.navigate(['/order']);
     }
+  }
+  @Input() imageUrl: string = '../../../assets/mzumbe.jpeg'; // Use default image if none provided
+  @Input() alt: string = 'Image';
+  isLoaded: boolean = false;
+  onImageLoad() {
+    console.log('Image loaded!');
+    this.isLoaded = true;
   }
 }
